@@ -26,14 +26,17 @@
 ###################################
 
 ## INSTANCE VARIABLES
+  ## Often Attributes
+    # ie name, username, password
 
 ## INSTANCE METHODS
-
+  ##Behaviors of the class
+  # ie make a most, send a message,like a post, create a photo album
       #INITIALIZE METHOD
 
 
-## ATTRIBUTES
-
+## INITIALIZE METHOD
+  ## Code run whenever a new class is created
 
 # class Order
 #   def initialize(subtotal, quantity) # <= instance method
@@ -62,8 +65,14 @@
 
 #Class methods are called directly by the class and not by an instance of the class.
 
+class Kitten
+  def self.say_meow
+    return 'meow'
+  end
 
+end
 
+puts Kitten.say_meow
 
 
 ###################################
@@ -71,41 +80,41 @@
 ###################################
 
 
-# class Pawn
-#   attr_reader :position
-#   def initialize(position)
-#     @position = position
-#   end
-#
-#   # This is the class method, it starts with self.
-#   # It is only called on the class directly Pawn.make_row
-#   def self.make_row(side)
-#     if side == "white"
-#       num = 2
-#     else
-#       num = 7
-#     end
-#
-#     pawns = []
-#     ("a".."h").each do |letter|
-#       pawns << self.new("#{letter}#{num}")
-#     end
-#
-#     pawns
-#   end
-# end
-#
-# #make one pawn
-# one_pawn = Pawn.new("A2")
-#
-# #make a whole row of pawns
-# pawns = Pawn.make_row("black")
-#
-# #What is being stored in this local variable pawns?
-# print pawns
-#
-# #WHAT IS THIS DOING!?
-# puts pawns.shuffle.first.position
+class Pawn
+  attr_reader :position
+  def initialize(position)
+    @position = position
+  end
+
+  # This is the class method, it starts with self.
+  # It is only called on the class directly Pawn.make_row
+  def self.make_row(side)
+    if side == "white"
+      num = 2
+    else
+      num = 7
+    end
+
+    pawns = []
+    ("a".."h").each do |letter|
+      pawns << self.new("#{letter}#{num}")
+    end
+
+    pawns
+  end
+end
+
+#make one pawn
+one_pawn = Pawn.new("A2")
+
+#make a whole row of pawns
+pawns = Pawn.make_row("black")
+
+#What is being stored in this local variable pawns?
+print pawns
+p Pawn.position
+#WHAT IS THIS DOING!?
+puts pawns.shuffle.first.position
 
 
 
